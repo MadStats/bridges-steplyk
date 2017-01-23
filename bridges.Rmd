@@ -1,0 +1,16 @@
+---
+title: "bridges"
+author: "Tess Steplyk"
+date: "1/23/2017"
+output: html_document
+---
+
+#Wisconsin bridge data - 2015
+```{r}
+library(data.table)
+bridge = WI15
+head(bridge)
+bridge = data.frame(bridge$STRUCTURE_NUMBER_008, bridge$YEAR_BUILT_027, bridge$COUNTY_CODE_003, bridge$OPERATING_RATING_064, bridge$INVENTORY_RATING_066, bridge$ADT_029)
+colnames(bridge) = c("BridgeID", "YearBuilt", "FipCode","OperatingRating", "InventoryRating", "AvgDailyTraff")
+bridge
+```
